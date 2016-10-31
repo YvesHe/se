@@ -1,0 +1,24 @@
+IO汇总:
+
+字节流输入流
+java.io.InputStream(a)
+	
+			实现子类:FileInputStream,AudioInputStream, ByteArrayInputStream, FilterInputStream, InputStream, ObjectInputStream, PipedInputStream, SequenceInputStream, StringBufferInputStream 
+字符输入流
+java.io.Reader
+
+
+
+			
+
+输入流：　向内存中读进数据
+输出流：　内存中的数据写出到介质中去．
+
+问题：
+System.in　　
+
+
+System类中的字段:
+static PrintStream err  :“标准”错误输出流。 
+static InputStream in 	:“标准”输入流。 
+static PrintStream out  :“标准”输出流。 

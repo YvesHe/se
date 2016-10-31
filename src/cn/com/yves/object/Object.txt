@@ -1,2 +1,7 @@
+// 自动导入了lang包 不需要导入包了
+// java.lang.Object org.omg.CORBA.Object;
+
+
+
 问题:
 clone方法怎写?

@@ -37,10 +37,11 @@ public class ObjectTest {
 		Object obj = new Object();
 		object.equals(obj);
 		// 获得class 类的对象有什么用
-		System.out.println(object.getClass().toString());
+		object.getClass();// class 字节码可以用于反射的操作.
 		System.out.println(object.hashCode());
 		System.out.println(object.toString());
 
+		// notify 和notifyall wait等方法都是用于线程的操作,可以在线程中详细查看其功能.
 		// object.notify();
 		// object.notifyAll();
 		// try {
@@ -54,6 +55,3 @@ public class ObjectTest {
 
 	}
 }
-
-// 自动导入了lang包 不需要导入包了
-// java.lang.Object org.omg.CORBA.Object;
