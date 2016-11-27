@@ -1,0 +1,17 @@
+<!ELEMENT book (tile+,author*,publish)> 
+<!-- 定义元素book下的子元素有: title,author,publish(此时publish只能出现一次)   +:代表1或多个   *:代表0或多个   ?:代表0或1个  -->
+
+<!ELEMENT tile (#PCDATA)>   <!-- 定义tile的数据类型为#PCDATA: 字符串 -->
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publish (#PCDATA)>
+<!ELEMENT not EMPTY>        <!-- 定义空元素  -->
+
+
+<!-- 定义属性: 比如定义book的大小 为字符串类型   且为必须 ;定义书的颜色为字符串数据类型,不是必须,可要,可不要.-->
+<!ATTLIST book size CDATA  #REQUIRED>  <!-- REQUIRED为必须的-->
+<!ATTLIST book color CDATA #IMPLIED>   <!-- REQUIRED为不是必须的-->
+<!ATTLIST book count (1|0) "1">        <!-- 定义书的数量为1或者0不能为其他值,默认为1-->
+
+
+<!-- 定义实体:entity-->
+<!ENTITY copyright PUBLIC "http://www.w3cschool.cn/entities.dtd">

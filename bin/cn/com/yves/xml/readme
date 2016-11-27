@@ -1,1 +1,8 @@
 XML解析:
+
+DTD文件是决定xml文档的框架的.DTD文件可以单独存放,也可以内置在xml文件中.
+XML Schema: 替代DTD来规划xml文档的.
+
+
+JDom  解析
+Xpath 解析

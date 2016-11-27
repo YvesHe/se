@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- 注意:注释也不能放在第一行;不是独立的文档,所以该xml要依赖dtd文件 -->
+
+<!DOCTYPE yves SYSTEM "dtd.dtd">
+<!-- yves为别名,可以任意取;SYSTEM/PUBLIC为该dtd的可用性.public为表示可公开访问的对象,比如网上的公开资源;SYSTEM表示系统资源，如本地文件; 
+	dtd.dtd为该dtd的路径或者网址.是本地文件时:可以是绝对路径,也可以是相对路径 -->
+
+<yves>
+	<book size="12" color="red" count="1">
+		<tile>精通java</tile>
+		<author>yves</author>
+		<publish>清华大学出版社</publish>
+	</book>
+	
+	<book size="54" count="0">
+		<tile>精通mysql</tile>
+		<author>yves</author>
+		<publish>清华大学出版社</publish>
+	</book>
+</yves>
+
