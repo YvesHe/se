@@ -1,0 +1,13 @@
+Annotation: 注解
+
+Annotation分类:2类
+标记Annotation
+元数据Annotation
+
+
+根据Annotation是否包含成员变量，可以把Annotation分为如下两类：
+
+标记Annotation：没有成员变量的Annotation被称为标记。这种Annotation仅用自身的存在与否来为我们提供信息，例如@override等。
+也就是在该定义的Annotation中没有任何东西,只是单纯靠是否使用了该标记来提供信息.
+
+元数据Annotation：包含成员变量的Annotation。因为它们可以接受更多的元数据，因此被称为元数据Annotation。

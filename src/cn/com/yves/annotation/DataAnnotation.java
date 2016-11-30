@@ -1,10 +1,10 @@
 /**   
- * Filename:    Reflect.java   
+ * Filename:    DataAnnotation.java   
  * Copyright:   Copyright (c)2010  
  * Company:     dreams8 
  * @version:    1.0   
  * @since:  JDK 1.7
- * Create at:   2016-11-30 上午10:10:26   
+ * Create at:   2016-11-30 下午4:56:11   
  * Description:  
  *   
  * Modification History:   
@@ -12,16 +12,19 @@
  * ----------------------------------------------------------------- 
  * 2016-11-30 Yves He      1.0     1.0 Version   
  */
-package cn.com.yves.reflect;
+package cn.com.yves.annotation;
 
-public class Reflect {
+/**
+ * 定义一个"元数据Annotation": 包含成员变量的
+ * 
+ * @author Yves He
+ * 
+ */
+public @interface DataAnnotation {
 
-    private static native void registerNatives();// 为什么native方法可以不要方法体.
+    /* 理解:参数类型,变量名 */
+    String name() default "Yves";
 
-    public static void main(String[] args) {
-        Class<Object> clazz = null;
-        Object oo = null;
-
-    }
+    int age();
 
 }
