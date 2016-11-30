@@ -34,19 +34,20 @@ public class UtillClass {
 
     /* 不同访问权限的方法 */
     void showMessage() {// 缺省的访问权限
+        System.out.println("showMessage");
+    }
+
+    private void showMessagePrivate() {
+        System.out.println("showMessagePrivate");
+    }
+
+    protected void showMessageProtected() {
+        System.out.println("showMessageProtected");
 
     }
 
     public void showMessagePublic() {
-
-    }
-
-    private void showMessagePrivate() {
-
-    }
-
-    protected void showMessageProtected() {
-
+        System.out.println("showMessagePublic");
     }
 
 }

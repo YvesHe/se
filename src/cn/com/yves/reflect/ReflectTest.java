@@ -14,12 +14,36 @@
  */
 package cn.com.yves.reflect;
 
-public class ReflectTest {
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-    private static native void registerNatives();// 为什么native方法可以不要方法体.
+public class ReflectTest {
 
     public static void main(String[] args) {
         Class clazz = UtillClass.class;
+
+        Method[] methods = clazz.getDeclaredMethods();// 获取该类中所有声明的方法
+        System.out.println("总共的方法:" + methods.length);
+        for (Method m : methods) {
+            System.out.println(m.getName());
+        }
+
+        System.out.println("**********************");
+
+        for (Method m : methods) {
+
+            System.out.println(m.getName());
+
+            try {
+                m.invoke(new UtillClass(), null);
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }
