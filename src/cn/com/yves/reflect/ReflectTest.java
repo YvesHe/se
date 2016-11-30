@@ -33,6 +33,7 @@ public class ReflectTest {
         for (Method m : methods) {
 
             System.out.println(m.getName());
+            m.setAccessible(true);// 打开访问权限,对那些私有的方法打开访问权限后就可以调用了,不然会出异常
 
             try {
                 m.invoke(new UtillClass(), null);
