@@ -22,32 +22,23 @@ package cn.com.yves.reflect.暴力反射;
  */
 public class UtillClass {
 
-    /* 构造方法 */
+    /* 都最难反射的private修饰来反射,其他访问权限的类似 */
+
+    private final int namePrivate = 88;
+    private final String name;
+    private final int age;
+
     private UtillClass(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
-    /* 不同访问全向的属性 */
-    String name;
-    private int namePrivate;
-    public int namePublic;
-    protected int nameProtected;
-
-    /* 不同访问权限的方法 */
-    void showMessage() {// 缺省的访问权限
-        System.out.println("showMessage");
+    private void showMessage(String name, int age) {
+        System.out.println("Info " + name + ":" + age);
     }
 
-    private void showMessagePrivate() {
-        System.out.println("showMessagePrivate");
-    }
-
-    protected void showMessageProtected() {
-        System.out.println("showMessageProtected");
-
-    }
-
-    public void showMessagePublic() {
-        System.out.println("showMessagePublic");
+    public void show() {
+        System.out.println("共有方法!");
     }
 
 }

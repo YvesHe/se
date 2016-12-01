@@ -27,7 +27,7 @@ public class Test {
         // UseAnnotationClass bean = new UseAnnotationClass();
         // Class<? extends UseAnnotationClass> clazz = bean.getClass();
 
-        Class clazz;
+        Class clazz = null;
         try {
             clazz = Class.forName("cn.com.yves.annotation.UseAnnotationClass");
 

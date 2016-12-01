@@ -24,6 +24,7 @@ import java.lang.annotation.Annotation;
  */
 @YvesAnnotation(age = 23, value = "hello")
 public class UseAnnotationClass {
+
     public static void main(String[] args) {
         Annotation aa = null;
         Class clazz = null;

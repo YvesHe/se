@@ -23,6 +23,7 @@ package cn.com.yves.reflect.class_;
 public class Test {
     public static void main(String[] args) {
 
+        /* 获取字节码的三种方式 */
         // 方式一:
         Class<?> clazz1 = getClazz1();
 
@@ -42,6 +43,13 @@ public class Test {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        }
+
+        /* 获取包名 */
+        Package package1 = UserBean.class.getPackage();
+        Package[] packages = package1.getPackages();
+        for (Package p : packages) {
+            System.out.println(p.getName());
         }
 
     }

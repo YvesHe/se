@@ -1,4 +1,6 @@
 Annotation: 注解
+用到的两个接口:该接口是所有Annotation类型的父接口
+                java.lang.reflect 包下新增了AnnotatedElement接口
 
 Annotation分类:2类
 标记Annotation
