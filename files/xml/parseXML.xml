@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<country>
+	<china area="960">
+		<city>北京</city>
+		<city>上海</city>
+		<city>广州</city>
+	</china>
+
+	<Japan>
+		<省>
+			<city>大阪</city>
+			<ciy>东京</ciy>
+		</省>
+	</Japan>
+</country>
+
