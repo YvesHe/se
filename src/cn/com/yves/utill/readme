@@ -1,0 +1,7 @@
+java常用工具类
+
+排序几个重要的接口:
+Comparable    比较接口interface 
+Comparator    比较器比较规则interface
+Collections   集合器class
+Collator      整理器；校验器  与本地的语言环境相关 abstract class
