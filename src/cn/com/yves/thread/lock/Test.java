@@ -32,7 +32,7 @@ class ThreadTest implements Runnable {
     public void run() {
 
         System.out.println("in");// 两个线程可以几乎同时执行到这里,然后线面就是上锁了
-        lock.lock();
+        lock.lock();// 如果锁已被其他线程获取，则进行等待。
 
         try {
             System.out.println("Do somethins !");
