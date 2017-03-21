@@ -8,7 +8,20 @@ xml中内置了dtd文件的: dtdInXml.xml
 
 以下是 属性类型的选项：
 类型  描述
-CDATA   值为字符数据 (character data)
+CDATA   值为字符数据 (character data)(里面的数值会被xml解释)
+CDATA   是不通过解析器进行解析的文本，文本中的标签不被看作标记。
+    PCDATA：<title>XSLT</title>
+    CDATA：<author><![CDATA[Michael key]]></author>
+    xml解析器忽略CDATA而解析PCDATA，所以我们想定义一个名为range的元素，其值为“0<counter<1000”。因为<是保留字符，所以不能按如下方式定义元素：
+    <range>0<counter<1000</range>
+           但是却可以这样：
+    <range><![CDATA[0<counter<1000]]></range>
+          这就是CDATA和PCDATA共存的原因。
+           但是，如果你一定要使用PCDATA来表示，可以通过实体引用来实现，如：
+    <range>0&lt;counter&lt;1000</range>
+
+
+
 (en1|en2|..)    此值是枚举列表中的一个值
 ID  值为唯一的 id
 IDREF   值为另外一个元素的 id

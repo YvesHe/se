@@ -34,6 +34,12 @@ public class ThreadNotify implements Runnable {
             System.out.println("开始唤醒线程!");
             long startTime = System.currentTimeMillis();
             lock.notify();// notify()方法可以随机唤醒等待队列中等待同一共享资源的一个线程，并使得该线程退出等待状态，进入可运行状态
+            try {
+                Thread.currentThread().sleep(3000);// 虽然在这之前已经notify发送通知
+                                                   // 但是等待的线程并不会马上执行而是要等待这个线程释放锁才执行,也及时说notify只发通知,不释放锁.
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("唤醒结束,等待时间:"
                     + (System.currentTimeMillis() - startTime));
 

@@ -1,0 +1,22 @@
+主要讨论 lock 接口中的方法:
+
+
+接口Lock  有三个实现子类:
+ReadLock
+WriteLock
+ReentrantLock
+
+
+
+void lock() 
+          获取锁。 
+ void lockInterruptibly() 
+          如果当前线程未被中断，则获取锁。 
+ Condition newCondition() 
+          返回绑定到此 Lock 实例的新 Condition 实例。 
+ boolean tryLock() 
+          仅在调用时锁为空闲状态才获取该锁。 
+ boolean tryLock(long time, TimeUnit unit) 
+          如果锁在给定的等待时间内空闲，并且当前线程未被中断，则获取锁。 
+ void unlock() 
+          释放锁。 

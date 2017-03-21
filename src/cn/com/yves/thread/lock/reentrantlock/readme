@@ -1,0 +1,13 @@
+可重入的互斥锁 Lock: 
+
+具体的操作在lock包中都已经做了详细说明.
+
+该类中除了验证lock接口的所有方法, 自定义的方法 有待验证...
+
+
+构造方法摘要 :
+ReentrantLock() 
+          创建一个 ReentrantLock 的实例。 
+ReentrantLock(boolean fair) 
+          创建一个具有给定公平策略的 ReentrantLock。 
+

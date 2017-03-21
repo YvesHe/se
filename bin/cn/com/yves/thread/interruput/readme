@@ -1,0 +1,14 @@
+测试外部调用 interrupt()来中断时的响应:
+
+Lock :在使用lock.lockInterruptibly()   来进行上锁时,会抛出异常InterruptedException 
+              总之:lock只能中断等待中的线程, 不能中断正在运行中的线程.
+                   
+synchronize:  使用synchronize来上锁时,是不具备可以从外部中断等待中的线程和中断正在运行的线程的.
+                总之: synchronize不管何种状态都是不能被中断的.
+
+
+
+
+思维误区: 
+    测试代码中一直讲要做的事情用Thread.sleep()来处理了,但是这会使当前线程进入等待的状态 ,恰好满足interrupt()方的条件
+    应该写成死循环才知道有没有可能被中断.
