@@ -1,0 +1,12 @@
+并发容器:
+CopyOnWriteArrayList和CopyOnWriteArraySet和ConcurrentHashMap
+CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。（可以自定义CopyOnWrite容器）
+
+
+在读的时候 不上锁,可以并发读取.
+
+
+在写的时候是要上锁的.
+
+
+不能保证数据的及时可见性.    (最终结果是一致的)

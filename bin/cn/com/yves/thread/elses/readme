@@ -1,0 +1,17 @@
+并发编程辅助类:
+    CountDownLatch:
+        CountDownLatch类只提供了一个构造器：
+            public CountDownLatch(int count) {  };  //参数count为计数值
+        CountDownLatch类中最重要的方法：
+            public void await() throws InterruptedException { };   //调用await()方法的线程会被挂起，它会等待直到count值为0才继续执行
+            public boolean await(long timeout, TimeUnit unit) throws InterruptedException { };  //和await()类似，只不过等待一定的时间后count值还没变为0的话就会继续执行
+            public void countDown() { };  //将count值减1
+            
+    CyclicBarrier:(栅栏可以从用,在超时越过栅栏后,或者达到条件越过栅栏后的栅栏又可以重新用来拦截,而CountDownLatch不能重复使用)
+    　                   最重要的方法就是await方法，它有2个重载版本：
+                public int await() throws InterruptedException, BrokenBarrierException { };
+                public int await(long timeout, TimeUnit unit)throws InterruptedException,BrokenBarrierException,TimeoutException { };
+                                            第一个版本比较常用，用来挂起当前线程，直至所有线程都到达barrier状态再同时执行后续任务；
+                                            第二个版本是让这些线程等待至一定的时间，如果还有线程没有到达barrier状态就直接让到达barrier的线程执行后续任务。
+                                            
+    Semaphore:
