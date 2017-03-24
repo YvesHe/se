@@ -29,14 +29,15 @@ public class People implements Cloneable {// 1.要被clone的类必须要实现�
     }
 
     @Override
-    public Object clone() {// 2.复写clone方法,将异常内部处理,將返回的object对象具体化为本类对象.将返回的权限protected改为public权限
+    public Object clone() {// 2.复写clone方法,将异常内部处理(建议异常放在外部处理.),將返回的object对象具体化为本类对象.将返回的权限protected改为public权限
 
         People people = null;
         try {
-            people = (People) super.clone();
+            people = (People) super.clone();//
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
+
         return people;
     }
 
