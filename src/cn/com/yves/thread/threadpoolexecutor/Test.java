@@ -10,34 +10,41 @@
  */
 package cn.com.yves.thread.threadpoolexecutor;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Test {
     public static void main(String[] args) {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 200,
+                TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(5));
 
-        ThreadPoolExecutor executor = null;
-        ArrayBlockingQueue arrayQueue = null;
+        for (int i = 0; i < 15; i++) {
+            MyTask myTask = new MyTask(i);
+            executor.execute(myTask);
+            System.out.println("线程池中线程数目：" + executor.getPoolSize()
+                    + "，队列中等待执行的任务数目：" + executor.getQueue().size()
+                    + "，已执行玩别的任务数目：" + executor.getCompletedTaskCount());
+        }
+        executor.shutdown();
+    }
+}
 
-        // Iterable<String> conCollection = new ArrayList<String>();
-        // conCollection.iterator();
+class MyTask implements Runnable {
+    private final int taskNum;
 
-        Collection<String> collection = new ArrayList<String>();
+    public MyTask(int num) {
+        this.taskNum = num;
+    }
 
-        collection.add("1");
-        collection.add("2");
-        collection.add("3");
-
-        collection.add("yves");
-
-        Object[] array = collection.toArray(new Object[20]);// 这个方法只能向上转型
-                                                            // 分析源码得出,当传入的数组小,则使用collection的大小
-                                                            // 否则使用传入参数的大小,不足的部分都设置成null
-
-        System.out.println(array[0]);
-        System.out.println(array.length);
-
+    @Override
+    public void run() {
+        System.out.println("正在执行task " + taskNum);
+        try {
+            Thread.currentThread().sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("task " + taskNum + "执行完毕");
     }
 }

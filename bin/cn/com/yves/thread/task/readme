@@ -1,0 +1,5 @@
+讲解 java 中的   Timer   TimerTask
+
+TimerTask 实现 runnable 接口,但是没有具体的实现run方法  ,以及自己定义了一些抽象的方法,所以TimerTask被定义成了抽象类.
+
+Timer  是一个非抽象类.
