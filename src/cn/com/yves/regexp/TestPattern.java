@@ -22,7 +22,9 @@ public class TestPattern {
 
         // testFlag();
 
-        testStaticQuote();
+        // testStaticQuote();
+
+        testComplite2();
     }
 
     // Pattern的构造方法是private,compile()是用来产生实例化对象的
@@ -38,6 +40,22 @@ public class TestPattern {
         boolean result = matcher.find();
 
         System.out.println(result);
+
+    }
+
+    public static void testComplite2() {
+        String regex = "\\w+";
+        Pattern pattern1 = Pattern.compile(regex);
+        Pattern pattern2 = Pattern.compile(regex, Pattern.LITERAL);// 启用模式的字面值解析,输入序列中的元字符或转义序列不具有任何特殊意义。
+
+        Matcher matcher = pattern1.matcher("abc");
+        boolean result = matcher.find();
+        System.out.println(result);// true; \w 查找字母
+
+        Matcher matcher2 = pattern2.matcher("\\w+");
+        boolean result2 = matcher2.matches();
+        System.out.println(result2);// true matches为完全匹配查找的字面量 \w+
+                                    // 时才为true,"abc"时为false;
 
     }
 
