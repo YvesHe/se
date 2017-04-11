@@ -14,7 +14,11 @@
  */
 package cn.com.yves.collection.map;
 
+import java.util.HashMap;
+
 public class Test {
     String aa = null;
+
+    HashMap<String, String> hashMap = null;
 
 }

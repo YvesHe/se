@@ -24,13 +24,19 @@ import java.io.Serializable;
  */
 public class UserBean implements Serializable {
     /**
-     * long 型的serialVersionUID是干嘛的?
+     * 虚拟机是否允许反序列化，不仅取决于类路径和功能代码是否一致，一个非常重要的一点是两个类的序列化 ID 是否一致
+     * 
+     * （就是 private static final long serialVersionUID = 1L）。
      */
     private static final long serialVersionUID = 1L;
 
     private String name;
     private char sex;
     private int age;
+
+    public static String HELLO = "hello";// 静态变量, 序列化时候,不会保存
+
+    private transient String tranString = "yves";// 定义transient 声明为瞬态,不序列化
 
     public String getName() {
         return name;
@@ -54,6 +60,14 @@ public class UserBean implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getTranString() {
+        return tranString;
+    }
+
+    public void setTranString(String tranString) {
+        this.tranString = tranString;
     }
 
 }

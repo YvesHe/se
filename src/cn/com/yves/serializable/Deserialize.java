@@ -37,10 +37,12 @@ public class Deserialize {
 
             UserBean userBean = (UserBean) ois.readObject();
 
-            // 将序列化 的对象UserBean还原输出.
+            /* 将序列化 的对象UserBean还原输出. */
             System.out.println(userBean.getName());
             System.out.println(userBean.getAge());
             System.out.println(userBean.getSex());
+            System.out.println(userBean.getTranString());// null 没有参与序列化
+            System.out.println(UserBean.HELLO);// hello 静态变量,直接使用
 
         } catch (FileNotFoundException e) {// fis = new
                                            // FileInputStream("files/Serializable/userBean.ser")文件找不到会进这个异常.

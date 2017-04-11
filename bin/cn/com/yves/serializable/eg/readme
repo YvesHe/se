@@ -1,0 +1,11 @@
+Serializable 接口的序列化
+
+Externalizable 接口的序列化
+
+
+原理:  Externalizable源码里面还是extends 了接口Serializable
+
+总的结论:　　要实现序列化，始终要实现Serializable接口．
+
+
+瞬态关键字(transient)的作用是控制变量的序列化,在变量声明前加上该关键字，可以阻止该变量被序列化到文件中，在被反序列化后，瞬变变量的值被设为初始值，如int型的是0，对象型的是null。
