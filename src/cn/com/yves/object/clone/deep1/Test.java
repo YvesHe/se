@@ -14,9 +14,6 @@
  */
 package cn.com.yves.object.clone.deep1;
 
-import cn.com.yves.object.clone.deep2.Father;
-import cn.com.yves.object.clone.deep2.People;
-
 /**
  * 深层次clone一: 通过对要clone中引用继续clone
  * 
@@ -31,10 +28,15 @@ public class Test {
         Father father = new Father("father", 50);
         people.setFather(father);
 
-        People peopleClone = (People) people.clone();
-        Father fatherClone = peopleClone.getFather();
-
-        fatherClone.setName("father2");
+        People peopleClone;
+        try {
+            peopleClone = (People) people.clone();
+            Father fatherClone = peopleClone.getFather();
+            fatherClone.setName("father2");
+        } catch (CloneNotSupportedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         System.out.println(people.getFather().getName());// 获取的值还是people原来的值:father,不受clone对象对值的改变.
 
