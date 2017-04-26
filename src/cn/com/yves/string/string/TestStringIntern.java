@@ -36,10 +36,12 @@ public class TestStringIntern {
                                                       // toString里面还是new的String,所以又是新的引用.
         String s5 = s4.intern();// 去常量池中找,上面s3已经存了.
 
-        System.out.println(s1 == s2);// false
-        System.out.println(s3 == s2);// true;
-        System.out.println(s5 == s2);// true;
+        System.out.println(s1 == s2);// false jdk1.6
+        System.out.println(s3 == s2);// true; jdk1.6
+        System.out.println(s5 == s2);// true; jdk1.6
 
+        // 注意: jdk1.7中
+        // intern方法不会再复制实例到常量池值,而是在调用intern方法时在常量池值中记录首次出现实例的引用,并返回该引用
     }
 
 }
