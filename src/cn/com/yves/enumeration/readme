@@ -1,2 +1,23 @@
-枚举.
-枚举的使用法则.
+关于枚举的概念:
+http://www.iteye.com/topic/1116193
+http://www.cnblogs.com/zhaoyanjun/p/5659811.html
+
+用法:
+1.替代定义常量
+2.支持switch判断
+3.可以向定义常量的格式一样使用接口来组织枚举
+比如:
+public interface Food {  
+    enum Coffee implements Food{  
+        BLACK_COFFEE,DECAF_COFFEE,LATTE,CAPPUCCINO  
+    }  
+    enum Dessert implements Food{  
+        FRUIT, CAKE, GELATO  
+    }  
+}
+
+关于枚举集合的使用:
+java.util.EnumSet和java.util.EnumMap是两个枚举集合。
+EnumSet保证集合中的元素不重复；
+EnumMap中的 key是enum类型，而value则可以是任意类型。
+关于这个两个集合的使用就不在这里赘述，可以参考JDK文档。
