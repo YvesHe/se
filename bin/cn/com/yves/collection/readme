@@ -1,2 +1,32 @@
 重新认识集合:
-collection   所有集合的父接口
+collection   所有集合的父接口(包括:ArrayList 和Vector(线程同步的);Stack 堆栈(后进先出) extends Vector) Queue(接口,extends collection)
+
+
+
+
+各种集合的划分:
+
+http://blog.csdn.net/dengpeng0419/article/details/47983033
+
+
+容器:(主要分为两类,Collection和Map)
+
+|Collection 
+|　　├List 
+|　　│-├LinkedList 
+|　　│-├ArrayList 
+|　　│-└Vector 
+|　　│　└Stack 
+|　　├Set 
+|　　│├HashSet 
+|　　│├TreeSet 
+|　　│└LinkedSet 
+|　　├
+|　　├Queue 
+|　　│├ConcurrentLinkedQueue
+|　　│├ 
+|　　│└ 
+|Map 
+　　├Hashtable 
+　　├HashMap 
+　　└WeakHashMap
