@@ -1,0 +1,4 @@
+cn.com.yves.exception.InfraException: nihao
+	at cn.com.yves.exception.Test.main(Test.java:23)
+Caused by: java.lang.NullPointerException
+	... 1 more

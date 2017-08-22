@@ -16,7 +16,7 @@ public class Test {
         Car instance1 = Car.BAOMA;// 获取单个实例
         Car instance2 = Car.valueOf(Car.class, "BAOMA");
         Car instance3 = Car.valueOf("BAOMA");// 根据 枚举实例的名称获取枚举实例(区分大小写)
-        //Car instance = Car.valueOf("baoma");//这里名填写的是不存在的名句的名称,运行会抛出异常IllegalArgumentException:  "No enum const " + enumType +"." + name
+        //Car instance = Car.valueOf("baoma");//这里填写的是不存在的枚举的名称,运行会抛出异常IllegalArgumentException:  "No enum const " + enumType +"." + name
 
         /**
          * 2.调用父类Enum中的-静态方法
@@ -33,7 +33,7 @@ public class Test {
          */
         Car ins = Car.BAOMA;
         boolean equ = ins.equals(Car.BAOMA);// true
-        String name = ins.toString();// 放回name 也就是定义实例的名称,比如BAOMA
+        String name = ins.toString();// 返回name 也就是定义实例的名称,比如BAOMA
         int result = Car.BAOMA.compareTo(Car.BENCI);// 比较此枚举与指定对象的顺序,也就是枚举的声明的顺序  >0 代表benci在baoma后面.
         System.out.println(Car.BAOMA == instance3);//true
 
@@ -43,7 +43,7 @@ public class Test {
          * 
          */
         Car ins2 = Car.BAOMA;
-        String name2 = ins2.name();// 获取枚举实例的生命的 名称,如BAOMA
+        String name2 = ins2.name();// 获取枚举实例的声明的 名称,如BAOMA
         int ordina2 = ins2.ordinal();// 获取枚举实例 声明的位置,从0开始计算
 
         System.out.println();
