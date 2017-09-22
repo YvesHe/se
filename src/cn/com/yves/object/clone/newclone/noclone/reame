@@ -1,0 +1,27 @@
+克隆对象中的引用成员不实现克隆.
+
+
+1.Cart对象要实现clone,首先clone方法是Object对象的Protect方法,外部是不能调用的,所以要实现对象的克隆就必须实现cloneable接口,覆写clone方法,修改权限为public.
+
+像这样:
+public class Cart implements Cloneable{
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+    
+由于我们是知道这个方法是给哪个具体的类做clone的,所以我们可以将返回值具体化,比如:
+    @Override
+    public Cart clone() throws CloneNotSupportedException {
+        return (Cart) super.clone();
+    }
+    
+
+    
+2.在提供clone方法的类里面有引用型的时候,该引用可以没有实现cloneable接口,乃至该类中的成员还有引用型,也没有实现cloneable接口,这些都是不影响对Cart类的clone的.
+里面的引用依然是有值,而不是为null.
+像这样:
+Cart类实现了cloneable接口,而Shop和Generic不需要实现cloneable接口.
+
+
