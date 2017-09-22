@@ -1,0 +1,18 @@
+java.util.Properties 
+
+介绍:
+public class Properties extends Hashtable<Object,Object>
+
+所有已实现的接口： Serializable, Cloneable, Map<Object,Object> 
+
+
+
+Properties 的构造方法:
+    Properties() 
+          创建一个无默认值的空属性列表。
+    Properties(Properties defaults) 
+          创建一个带有指定默认值的空属性列表。
+          (获取值的时候会从会先成新建的Properties中获取值,如果获取不到再从default中获取.)
+    
+    
+由于Properties  实现了Map接口,所有Properties对象中有Map的一系列方法.
